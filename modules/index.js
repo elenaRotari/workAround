@@ -66,12 +66,12 @@ const showRes = () => {
         getDataByCompany(company, result)[0].company
       );
 
-      // reduce function for avverage salaray by company
+      // reduce function for average salaray by company
       const byCompanySalary =
         byCompany.reduce((acc, el) => (acc += el.salary), 0) / byCompany.length;
       document.querySelector(
         "#salaryAverageByCompany"
-      ).innerText = ` The avverage salary at ${
+      ).innerText = ` The average salary at ${
         getDataByCompany(company, result)[0].company
       } is $${byCompanySalary.toFixed(2)}`;
 
