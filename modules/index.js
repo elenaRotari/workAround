@@ -82,7 +82,7 @@ const showRes = () => {
         }, 0) / salaryData.length;
       document.querySelector(
         "#salaryAverageIndustry"
-      ).innerText = `Theaverage in the tech industry is $${avverageAll.toFixed(
+      ).innerText = `The average in the Tech industry is $${avverageAll.toFixed(
         2
       )}`;
     });
