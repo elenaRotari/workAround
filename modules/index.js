@@ -24,7 +24,7 @@ const showRes = () => {
     radioBtn.addEventListener("change", (event) => {
       const role = event.target.closest("label").innerText;
       result = getDataByRole(role);
-      // console.log(result);
+      console.log(result);
     });
   });
 
@@ -45,12 +45,10 @@ const showRes = () => {
     radioBtn.addEventListener("change", (event) => {
       const company = event.target.closest("label").innerText;
       // show sallary role with company
+      console.log(getDataByCompany(company));
       document.querySelector("#salarySelected").innerText = `The salary of ${
-        getDataByCompany(company, result)[0].role
-      } and ${company} is $${getDataByCompany(
-        company,
-        result
-      )[0].salary.toFixed(2)}`;
+        result[0].role
+      } and ${company} is $${getDataByCompany(company)[0].salary.toFixed(2)}`;
 
       // reduce function by role to get avverage salary
       const byRole = getDataByRole(getDataByCompany(company, result)[0].role);
@@ -59,12 +57,10 @@ const showRes = () => {
       document.querySelector(
         "#salaryAverageByRole"
       ).innerText = ` The average salary at ${
-        getDataByCompany(company, result)[0].role
+        result[0].role
       } positions is $${byRoleSalary.toFixed(2)}`;
 
-      const byCompany = getDataByCompany(
-        getDataByCompany(company, result)[0].company
-      );
+      const byCompany = getDataByCompany(getDataByCompany(company)[0].company);
 
       // reduce function for average salaray by company
       const byCompanySalary =
